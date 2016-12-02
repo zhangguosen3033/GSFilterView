@@ -2,8 +2,6 @@
 //  DKFilterModel.h
 //  Partner
 //
-//  Created by Drinking on 14-12-19.
-//  Copyright (c) 2014年 zhinanmao.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
