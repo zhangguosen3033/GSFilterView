@@ -66,6 +66,17 @@
         subView.tag = 444;              //it won't invoke layoutSubviews
         [self addSubview:subView];      //it will be removed after buttons initialization
         
+        //接收到数据后  创建按钮并设置cell高度
+        if (_buttons.count !=_filterData.elements.count) {
+            
+            [self initButtons];
+            
+            [[self viewWithTag:444] removeFromSuperview];
+            
+        }
+        
+        self.frame = CGRectMake(0, 0, _maxViewWidth, [self getEstimatedHeight]);
+
     }
     return self;
 }
@@ -151,15 +162,15 @@
     
     [super layoutSubviews];
     
-    if (_buttons.count !=_filterData.elements.count) {
-        
-        [self initButtons];
-        
-        [[self viewWithTag:444] removeFromSuperview];
-        
-    }
-    
-    self.frame = CGRectMake(0, 0, _maxViewWidth, [self getEstimatedHeight]);
+//    if (_buttons.count !=_filterData.elements.count) {
+//        
+//        [self initButtons];
+//        
+//        [[self viewWithTag:444] removeFromSuperview];
+//        
+//    }
+//    
+//    self.frame = CGRectMake(0, 0, _maxViewWidth, [self getEstimatedHeight]);
     
 }
 
